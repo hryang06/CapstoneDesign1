@@ -26,10 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"DaumMapApiDemos", nil);
+    self.title = NSLocalizedString(@"모여봐요 동네카페", nil);
     
-    _sampleList = [[NSArray alloc] initWithObjects:@{@"Title":@"MapView", @"Subtitle":@"기본 맵뷰, 타일 종류"},
-                  @{@"Title":@"Markers", @"Subtitle":@"기본 마커, 커스텀 마커, 마커 동작"},
+    _sampleList = [[NSArray alloc] initWithObjects:@{@"Title":@"동네 카페", @"Subtitle":@"거리순, 가격순"},
+                  @{@"Title":@"동네 카페2", @"Subtitle":@"거리순, 아메리카순"},
                   @{@"Title":@"Polyline,Polygon", @"Subtitle":@"지도 위 그래픽 요소 그리기"},
                   @{@"Title":@"Location", @"Subtitle":@"위치 관련 API"},
                   @{@"Title":@"Camera", @"Subtitle":@"카메라 관련 API"},
