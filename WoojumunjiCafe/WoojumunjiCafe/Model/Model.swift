@@ -8,17 +8,24 @@
 
 import Foundation
 
-class Memo {
-    var content: String
+class Cafe {
+    var cafeName: String
     var insertDate: Date
     
     init(content: String) {
-        self.content = content
+        self.cafeName = content
         insertDate = Date()
     }
     
-    static var dummyMemoList = [
-        Memo(content: "Lorem Ipsum"),
-        Memo(content: "Subscribe + 👍 = ❤️")
+    static var dummyCafeList = [
+        Cafe(content: "비로소 커피"),
+        Cafe(content: "브로일링 컴퍼니 커피"),
+        Cafe(content: "스타벅스"),
+        Cafe(content: "스타벅스"),
+        Cafe(content: "스타벅스"),
+        Cafe(content: "스타벅스"),
+        Cafe(content: "스타벅스"),
+        Cafe(content: "스타벅스"),
+        Cafe(content: "스타벅스")
     ]
 }

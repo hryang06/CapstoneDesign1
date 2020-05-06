@@ -13,14 +13,16 @@ class ViewController: UIViewController, MTMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
         mapView = MTMapView(frame: self.view.bounds)
-        
+
         if let mapView = mapView {
             mapView.delegate = self
             mapView.baseMapType = .standard
-            self.view.addSubview(mapView)
+            //self.view.addSubview(mapView)
+            //mapView = initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)*0.7);
         }
-        // Do any additional setup after loading the view.
     }
     
 
