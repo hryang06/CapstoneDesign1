@@ -7,32 +7,13 @@
 //
 
 import UIKit
-//import MapKit
 
 class TableViewController: UITableViewController {
-    //var mapView: MTMapView?
-    //let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
-        //mapView = MTMapView(frame: self.view.bounds)
-        /*
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        //mapView.showsUserLocation = true
- 
-        
-        if let mapView = mapView {
-            mapView.delegate = self
-            mapView.baseMapType = .standard
-            self.view.addSubview(mapView)
-        }
- */
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -59,7 +40,7 @@ class TableViewController: UITableViewController {
         // Configure the cell...
         let target  = Cafe.dummyCafeList[indexPath.row]
         cell.textLabel?.text = target.cafeName
-        cell.detailTextLabel?.text = target.insertDate.description
+        cell.detailTextLabel?.text = target.americano.description
 
         return cell
     }
