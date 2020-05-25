@@ -12,11 +12,15 @@ class Cafe {
     var cafeName: String
     //var insertDate: Date
     var americano: Int
+    var latitude: Double
+    var longitude: Double
     
     init(content: String) {
         self.cafeName = content
         //insertDate = Date()
         americano = 4000
+        latitude = 37.550950
+        longitude = 126.941017
     }
     
     static var dummyCafeList = [
