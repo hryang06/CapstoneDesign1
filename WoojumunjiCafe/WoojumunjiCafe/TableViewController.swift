@@ -32,7 +32,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return DataManager.shared.cafeList.count
+        return Cafe.dummyCafeList.count
     }
 
     // 가장 중요한 메소드.
@@ -40,7 +40,7 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-        let target  = DataManager.shared.cafeList[indexPath.row]
+        let target  = Cafe.dummyCafeList[indexPath.row]
         cell.textLabel?.text = target.name
         cell.detailTextLabel?.text = target.price.description
 

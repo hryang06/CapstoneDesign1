@@ -179,8 +179,8 @@
 				9910370F2462A34B00D2BDCE /* Info.plist */,
 				991037072462A34B00D2BDCE /* WoojumunjiCafe.xcdatamodeld */,
 				991037F52462BE3400D2BDCE /* Bridging_Header.h */,
-				991037F82462C78200D2BDCE /* TableViewController.swift */,
 				991037FE2462E32400D2BDCE /* ViewController.swift */,
+				991037F82462C78200D2BDCE /* TableViewController.swift */,
 				995F28C12475336A00178C01 /* RoundedButton.swift */,
 				995F28C32475374C00178C01 /* ButtonViewController.swift */,
 			);
