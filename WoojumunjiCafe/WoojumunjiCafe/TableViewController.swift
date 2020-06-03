@@ -17,6 +17,8 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
     }
 
     // MARK: - Table view data source
@@ -30,7 +32,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Cafe.dummyCafeList.count
+        return DataManager.shared.cafeList.count
     }
 
     // 가장 중요한 메소드.
@@ -38,9 +40,9 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-        let target  = Cafe.dummyCafeList[indexPath.row]
-        cell.textLabel?.text = target.cafeName
-        cell.detailTextLabel?.text = target.americano.description
+        let target  = DataManager.shared.cafeList[indexPath.row]
+        cell.textLabel?.text = target.name
+        cell.detailTextLabel?.text = target.price.description
 
         return cell
     }

@@ -51,6 +51,7 @@
 		991037F22462B81400D2BDCE /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991037D62462B81400D2BDCE /* DaumMap.framework */; };
 		991037F92462C78200D2BDCE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991037F82462C78200D2BDCE /* TableViewController.swift */; };
 		991037FF2462E32400D2BDCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991037FE2462E32400D2BDCE /* ViewController.swift */; };
+		995B14A8247E48550037FDAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B14A7247E48550037FDAF /* DataManager.swift */; };
 		995F28C22475336A00178C01 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F28C12475336A00178C01 /* RoundedButton.swift */; };
 		995F28C42475374C00178C01 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F28C32475374C00178C01 /* ButtonViewController.swift */; };
 /* End PBXBuildFile section */
@@ -124,6 +125,7 @@
 		991037F52462BE3400D2BDCE /* Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging_Header.h; sourceTree = "<group>"; };
 		991037F82462C78200D2BDCE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		991037FE2462E32400D2BDCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		995B14A7247E48550037FDAF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		995F28C12475336A00178C01 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		995F28C32475374C00178C01 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +169,7 @@
 		991036FD2462A34B00D2BDCE /* WoojumunjiCafe */ = {
 			isa = PBXGroup;
 			children = (
+				995B14A6247E483D0037FDAF /* Data */,
 				991037152462AA6600D2BDCE /* Model */,
 				991036FE2462A34B00D2BDCE /* AppDelegate.swift */,
 				991037002462A34B00D2BDCE /* SceneDelegate.swift */,
@@ -264,6 +267,14 @@
 				991037C92462B81400D2BDCE /* MTMapCircle.h */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		995B14A6247E483D0037FDAF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				995B14A7247E48550037FDAF /* DataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +383,7 @@
 				991037FF2462E32400D2BDCE /* ViewController.swift in Sources */,
 				995F28C22475336A00178C01 /* RoundedButton.swift in Sources */,
 				991037012462A34B00D2BDCE /* SceneDelegate.swift in Sources */,
+				995B14A8247E48550037FDAF /* DataManager.swift in Sources */,
 				991037172462AA8700D2BDCE /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -502,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -529,7 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.ac.sogang.cscp2.20171655.WoojumunjiCafe;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ac.sogang.cscp2.20171655;
 				PRODUCT_NAME = "모여봐요 동네카페";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/hryang/Desktop/github/CapstoneDesign1/WoojumunjiCafe/WoojumunjiCafe/Bridging_Header.h;
 				SWIFT_VERSION = 5.0;
@@ -554,7 +566,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.ac.sogang.cscp2.20171655.WoojumunjiCafe;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ac.sogang.cscp2.20171655;
 				PRODUCT_NAME = "모여봐요 동네카페";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/hryang/Desktop/github/CapstoneDesign1/WoojumunjiCafe/WoojumunjiCafe/Bridging_Header.h;
 				SWIFT_VERSION = 5.0;
