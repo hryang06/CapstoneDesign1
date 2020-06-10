@@ -54,6 +54,8 @@
 		995B14A8247E48550037FDAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B14A7247E48550037FDAF /* DataManager.swift */; };
 		995F28C22475336A00178C01 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F28C12475336A00178C01 /* RoundedButton.swift */; };
 		995F28C42475374C00178C01 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F28C32475374C00178C01 /* ButtonViewController.swift */; };
+		9972DAF22487ADFB0032C304 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9972DAF12487ADFB0032C304 /* GoogleService-Info.plist */; };
+		D3534E30672B94F1ADEFA600 /* Pods_WoojumunjiCafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B28B8C47079B01FE4224F03 /* Pods_WoojumunjiCafe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6666B35ECDC37A32E6C3392B /* Pods-WoojumunjiCafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoojumunjiCafe.debug.xcconfig"; path = "Target Support Files/Pods-WoojumunjiCafe/Pods-WoojumunjiCafe.debug.xcconfig"; sourceTree = "<group>"; };
+		6B28B8C47079B01FE4224F03 /* Pods_WoojumunjiCafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoojumunjiCafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		991036FB2462A34B00D2BDCE /* 모여봐요 동네카페.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "모여봐요 동네카페.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		991036FE2462A34B00D2BDCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		991037002462A34B00D2BDCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		995B14A7247E48550037FDAF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		995F28C12475336A00178C01 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		995F28C32475374C00178C01 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		9972DAF12487ADFB0032C304 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA0CAB6556362F124E5177CA /* Pods-WoojumunjiCafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoojumunjiCafe.release.xcconfig"; path = "Target Support Files/Pods-WoojumunjiCafe/Pods-WoojumunjiCafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 				991037612462AE7800D2BDCE /* CoreLocation.framework in Frameworks */,
 				9910375F2462AE6F00D2BDCE /* SystemConfiguration.framework in Frameworks */,
 				9910375D2462AE6600D2BDCE /* OpenGLES.framework in Frameworks */,
+				D3534E30672B94F1ADEFA600 /* Pods_WoojumunjiCafe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +162,7 @@
 				991037182462AE1000D2BDCE /* Frameworks */,
 				991036FD2462A34B00D2BDCE /* WoojumunjiCafe */,
 				991036FC2462A34B00D2BDCE /* Products */,
+				F54F0FD3D4A99C3AFE370CDE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +177,7 @@
 		991036FD2462A34B00D2BDCE /* WoojumunjiCafe */ = {
 			isa = PBXGroup;
 			children = (
+				9972DAF12487ADFB0032C304 /* GoogleService-Info.plist */,
 				995B14A6247E483D0037FDAF /* Data */,
 				991037152462AA6600D2BDCE /* Model */,
 				991036FE2462A34B00D2BDCE /* AppDelegate.swift */,
@@ -206,6 +215,7 @@
 				991037602462AE7800D2BDCE /* CoreLocation.framework */,
 				9910375E2462AE6F00D2BDCE /* SystemConfiguration.framework */,
 				9910375C2462AE6600D2BDCE /* OpenGLES.framework */,
+				6B28B8C47079B01FE4224F03 /* Pods_WoojumunjiCafe.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -277,6 +287,16 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		F54F0FD3D4A99C3AFE370CDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6666B35ECDC37A32E6C3392B /* Pods-WoojumunjiCafe.debug.xcconfig */,
+				EA0CAB6556362F124E5177CA /* Pods-WoojumunjiCafe.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,10 +304,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 991037122462A34B00D2BDCE /* Build configuration list for PBXNativeTarget "WoojumunjiCafe" */;
 			buildPhases = (
+				649486DD4A593D9E95783E72 /* [CP] Check Pods Manifest.lock */,
 				991036F72462A34B00D2BDCE /* Sources */,
 				991036F82462A34B00D2BDCE /* Frameworks */,
 				991036F92462A34B00D2BDCE /* Resources */,
 				991037692462AFBB00D2BDCE /* Embed Frameworks */,
+				1EE604F32912C98DD932DAC9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,6 +373,7 @@
 				991037F12462B81400D2BDCE /* map_pin_shadow.png in Resources */,
 				991037E42462B81400D2BDCE /* map_present_tracking.png in Resources */,
 				991037DB2462B81400D2BDCE /* detail_button.png in Resources */,
+				9972DAF22487ADFB0032C304 /* GoogleService-Info.plist in Resources */,
 				991037EE2462B81400D2BDCE /* noimage.png in Resources */,
 				991037E02462B81400D2BDCE /* th_line.png in Resources */,
 				991037E92462B81400D2BDCE /* info_box_tail.png in Resources */,
@@ -370,6 +393,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EE604F32912C98DD932DAC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WoojumunjiCafe/Pods-WoojumunjiCafe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WoojumunjiCafe/Pods-WoojumunjiCafe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WoojumunjiCafe/Pods-WoojumunjiCafe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		649486DD4A593D9E95783E72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WoojumunjiCafe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		991036F72462A34B00D2BDCE /* Sources */ = {
@@ -526,11 +591,12 @@
 		};
 		991037132462A34B00D2BDCE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6666B35ECDC37A32E6C3392B /* Pods-WoojumunjiCafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96ZSVV438J;
+				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
@@ -551,11 +617,12 @@
 		};
 		991037142462A34B00D2BDCE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA0CAB6556362F124E5177CA /* Pods-WoojumunjiCafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96ZSVV438J;
+				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",

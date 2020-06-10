@@ -43,16 +43,17 @@ class ViewController: UIViewController, MTMapViewDelegate {
         // 현재 지도를 중심으로 카페를 검색한다. (반경 500m)
         // 그 해당 카페를 마커 item에 집어 넣는다.
         print("testing")
-        var cafeList = [MTMapPOIItem] ()
+        //var cafeList = [MTMapPOIItem] ()
         
+        /*
         for cafe in Cafe.dummyCafeList {
             if cafe.radius <= 350 {
                 cafeList.append(poiItem(name: cafe.name, latitude: cafe.latitude, longitude: cafe.longitude))
             }
-        }
+        }*/
         
-        mapView?.addPOIItems(cafeList)
-        mapView?.fitAreaToShowAllPOIItems()
+        //mapView?.addPOIItems(cafeList)
+        //mapView?.fitAreaToShowAllPOIItems()
     }
     
     @IBAction func onCurrentLocationClick(_ sender: Any) {

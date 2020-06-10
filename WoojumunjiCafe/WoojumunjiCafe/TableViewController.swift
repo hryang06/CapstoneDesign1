@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class TableViewController: UITableViewController {
+    var ref: DatabaseReference!
+    var dummyCafeList = [Cafe]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +21,28 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        self.dummyCafeList.append(Cafe(name: "cafe_test"))
         
+        for idx in Range(0...9) {
+            let root = "data/" + String(idx)
+            ref = Database.database().reference()
+            ref.child(root).observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let cafename = value?["place_name"] as? String ?? ""
+                //print(cafename)
+                let cafe = Cafe(name: cafename)
+                print(cafe.name)
+                self.dummyCafeList.append(cafe)
+                print(self.dummyCafeList.count)
+            })
+        }
+        //{ (error) in
+        //    print(error.localizedDescription)
+        //}
+        print("here")
+        print(self.dummyCafeList.count)
+        //self.loadView()
+        //Cafe.loadCafe()
     }
 
     // MARK: - Table view data source
@@ -32,7 +56,8 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Cafe.dummyCafeList.count
+        //return 30
+        return self.dummyCafeList.count
     }
 
     // 가장 중요한 메소드.
@@ -40,10 +65,25 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-        let target  = Cafe.dummyCafeList[indexPath.row]
+        let target  = self.dummyCafeList[indexPath.row]
         cell.textLabel?.text = target.name
         cell.detailTextLabel?.text = target.price.description
 
+        /*
+        let root = "data/" + String(indexPath.row)
+        ref = Database.database().reference()
+        ref.child(root).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let cafename = value?["place_name"] as? String ?? ""
+            cell.textLabel?.text = cafename
+            //print(cafename)
+            let cafe = Cafe(name: cafename)
+            //print(cafe.name)
+            self.dummyCafeList.append(cafe)
+            //print(self.dummyCafeList[0].name)
+        })
+        print(self.dummyCafeList.count)*/
+        
         return cell
     }
     
