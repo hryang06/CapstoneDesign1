@@ -13,7 +13,7 @@
 		991037092462A34B00D2BDCE /* WoojumunjiCafe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 991037072462A34B00D2BDCE /* WoojumunjiCafe.xcdatamodeld */; };
 		9910370B2462A34B00D2BDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9910370A2462A34B00D2BDCE /* Assets.xcassets */; };
 		9910370E2462A34B00D2BDCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9910370C2462A34B00D2BDCE /* LaunchScreen.storyboard */; };
-		991037172462AA8700D2BDCE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991037162462AA8700D2BDCE /* Model.swift */; };
+		991037172462AA8700D2BDCE /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991037162462AA8700D2BDCE /* Cafe.swift */; };
 		9910375D2462AE6600D2BDCE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9910375C2462AE6600D2BDCE /* OpenGLES.framework */; };
 		9910375F2462AE6F00D2BDCE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9910375E2462AE6F00D2BDCE /* SystemConfiguration.framework */; };
 		991037612462AE7800D2BDCE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991037602462AE7800D2BDCE /* CoreLocation.framework */; };
@@ -55,6 +55,9 @@
 		995F28C22475336A00178C01 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F28C12475336A00178C01 /* RoundedButton.swift */; };
 		995F28C42475374C00178C01 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F28C32475374C00178C01 /* ButtonViewController.swift */; };
 		9972DAF22487ADFB0032C304 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9972DAF12487ADFB0032C304 /* GoogleService-Info.plist */; };
+		99DF1DE02490D15A003CED5D /* CafeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DF1DDF2490D15A003CED5D /* CafeList.swift */; };
+		99DF1DE22490EB86003CED5D /* RoundedBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DF1DE12490EB86003CED5D /* RoundedBarButton.swift */; };
+		99DF1DE424910054003CED5D /* CafeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DF1DE324910054003CED5D /* CafeInfoViewController.swift */; };
 		D3534E30672B94F1ADEFA600 /* Pods_WoojumunjiCafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B28B8C47079B01FE4224F03 /* Pods_WoojumunjiCafe.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +85,7 @@
 		9910370A2462A34B00D2BDCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9910370D2462A34B00D2BDCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9910370F2462A34B00D2BDCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		991037162462AA8700D2BDCE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		991037162462AA8700D2BDCE /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		9910375C2462AE6600D2BDCE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		9910375E2462AE6F00D2BDCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		991037602462AE7800D2BDCE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -133,6 +136,9 @@
 		995F28C12475336A00178C01 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		995F28C32475374C00178C01 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		9972DAF12487ADFB0032C304 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99DF1DDF2490D15A003CED5D /* CafeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeList.swift; sourceTree = "<group>"; };
+		99DF1DE12490EB86003CED5D /* RoundedBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBarButton.swift; sourceTree = "<group>"; };
+		99DF1DE324910054003CED5D /* CafeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeInfoViewController.swift; sourceTree = "<group>"; };
 		EA0CAB6556362F124E5177CA /* Pods-WoojumunjiCafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoojumunjiCafe.release.xcconfig"; path = "Target Support Files/Pods-WoojumunjiCafe/Pods-WoojumunjiCafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +198,8 @@
 				991037F82462C78200D2BDCE /* TableViewController.swift */,
 				995F28C12475336A00178C01 /* RoundedButton.swift */,
 				995F28C32475374C00178C01 /* ButtonViewController.swift */,
+				99DF1DE12490EB86003CED5D /* RoundedBarButton.swift */,
+				99DF1DE324910054003CED5D /* CafeInfoViewController.swift */,
 			);
 			path = WoojumunjiCafe;
 			sourceTree = "<group>";
@@ -199,7 +207,8 @@
 		991037152462AA6600D2BDCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				991037162462AA8700D2BDCE /* Model.swift */,
+				991037162462AA8700D2BDCE /* Cafe.swift */,
+				99DF1DDF2490D15A003CED5D /* CafeList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,7 +302,6 @@
 				6666B35ECDC37A32E6C3392B /* Pods-WoojumunjiCafe.debug.xcconfig */,
 				EA0CAB6556362F124E5177CA /* Pods-WoojumunjiCafe.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -445,11 +453,14 @@
 				991037F92462C78200D2BDCE /* TableViewController.swift in Sources */,
 				991037092462A34B00D2BDCE /* WoojumunjiCafe.xcdatamodeld in Sources */,
 				991036FF2462A34B00D2BDCE /* AppDelegate.swift in Sources */,
+				99DF1DE22490EB86003CED5D /* RoundedBarButton.swift in Sources */,
+				99DF1DE424910054003CED5D /* CafeInfoViewController.swift in Sources */,
+				99DF1DE02490D15A003CED5D /* CafeList.swift in Sources */,
 				991037FF2462E32400D2BDCE /* ViewController.swift in Sources */,
 				995F28C22475336A00178C01 /* RoundedButton.swift in Sources */,
 				991037012462A34B00D2BDCE /* SceneDelegate.swift in Sources */,
 				995B14A8247E48550037FDAF /* DataManager.swift in Sources */,
-				991037172462AA8700D2BDCE /* Model.swift in Sources */,
+				991037172462AA8700D2BDCE /* Cafe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  Cafe.swift
 //  WoojumunjiCafe
 //
 //  Created by hryang on 2020/05/06.
@@ -15,16 +15,24 @@ class Cafe : NSObject {
     var latitude: Double
     var longitude: Double
     var radius: Int
+    
+    var checked: Bool
 
-    init(name: String) {
+    init(name: String, latitude: String, longitude: String, radius: String, price: Int) {
         self.name = name
-        price = 4000
-        latitude = 37.550950
-        longitude = 126.941017
-        radius = 100
+        self.price = price
+        self.latitude = Double(latitude) ?? 37.550950
+        self.longitude = Double(longitude) ?? 126.941017
+        self.radius = Int(radius) ?? 100
+        self.checked = false
     }
     
-    //var dummyCafeList = [Cafe]()
+    var dummyCafeList = [Cafe]()
+    
+    /* for toggling */
+    func toggleChecked() {
+        checked = !checked
+    }
 
     /*
     static var dummyCafeList = [

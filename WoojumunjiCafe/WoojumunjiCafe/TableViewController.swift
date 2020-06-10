@@ -9,9 +9,11 @@
 import UIKit
 import Firebase
 
+@available(iOS 13.0, *)
 class TableViewController: UITableViewController {
     var ref: DatabaseReference!
-    var dummyCafeList = [Cafe]()
+    var cafelist = CafeList()
+    //var dummyCafeList = [Cafe]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,28 +23,38 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        self.dummyCafeList.append(Cafe(name: "cafe_test"))
-        
-        for idx in Range(0...9) {
+        for idx in Range(0...14) {
             let root = "data/" + String(idx)
             ref = Database.database().reference()
             ref.child(root).observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
                 let cafename = value?["place_name"] as? String ?? ""
+                let latitude = value?["y"] as? String ?? ""
+                let longitude = value?["x"] as? String ?? ""
+                let radius = value?["distance"] as? String ?? ""
+                let price = value?["price"] as? Int ?? 0
+                
                 //print(cafename)
-                let cafe = Cafe(name: cafename)
+                let cafe = Cafe(name: cafename, latitude: latitude, longitude: longitude, radius: radius, price: price)
                 print(cafe.name)
-                self.dummyCafeList.append(cafe)
-                print(self.dummyCafeList.count)
+                self.cafelist.dummyCafeList.append(cafe)
+                print(self.cafelist.dummyCafeList.count)
             })
         }
         //{ (error) in
         //    print(error.localizedDescription)
         //}
-        print("here")
-        print(self.dummyCafeList.count)
+        
+        print("viewDidLoad")
+        print(self.cafelist.dummyCafeList.count)
         //self.loadView()
         //Cafe.loadCafe()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -53,38 +65,47 @@ class TableViewController: UITableViewController {
         return 0
     }
  */
+    
+    @IBAction func sortByPrice() {
+        print("sortByPrice")
+        cafelist.dummyCafeList = cafelist.dummyCafeList.sorted(by: {$0.price < $1.price})
+        tableView.reloadData()
+    }
+    
+    @IBAction func sortByRadius() {
+        print("sortByRadius")
+        cafelist.dummyCafeList = cafelist.dummyCafeList.sorted(by: {$0.radius < $1.radius})
+        tableView.reloadData()
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         //return 30
-        return self.dummyCafeList.count
+        return self.cafelist.dummyCafeList.count
     }
 
     // 가장 중요한 메소드.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        var subtitle: String
 
         // Configure the cell...
-        let target  = self.dummyCafeList[indexPath.row]
+        let target  = self.cafelist.dummyCafeList[indexPath.row]
         cell.textLabel?.text = target.name
-        cell.detailTextLabel?.text = target.price.description
+        if target.price == 0 {
+            subtitle = "정보없음"
+        } else {
+            subtitle = target.price.description + "원"
+        }
+        cell.detailTextLabel?.text = subtitle
 
-        /*
-        let root = "data/" + String(indexPath.row)
-        ref = Database.database().reference()
-        ref.child(root).observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let cafename = value?["place_name"] as? String ?? ""
-            cell.textLabel?.text = cafename
-            //print(cafename)
-            let cafe = Cafe(name: cafename)
-            //print(cafe.name)
-            self.dummyCafeList.append(cafe)
-            //print(self.dummyCafeList[0].name)
-        })
-        print(self.dummyCafeList.count)*/
-        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        let item = self.cafelist.dummyCafeList[indexPath.row]
+        item.toggleChecked()
     }
     
 
