@@ -26,7 +26,7 @@ class ViewController: UIViewController, MTMapViewDelegate {
         super.viewDidLoad()
         
         /* load data */
-        for idx in Range(0...14) {
+        for idx in Range(0...40) {
             let root = "data/" + String(idx)
             ref = Database.database().reference()
             ref.child(root).observeSingleEvent(of: .value, with: { (snapshot) in
