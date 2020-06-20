@@ -14,7 +14,7 @@ protocol TableViewControllerDelegate: class {
     @available(iOS 13.0, *)
     func tableViewController(_ controller: TableViewController, didFinishAdding item: Cafe)
 }
- */
+*/
 
 @available(iOS 13.0, *)
 class TableViewController: UITableViewController, CafeInfoViewControllerDelegate {

@@ -20,7 +20,9 @@ class CafeInfoViewController: UIViewController {
     @IBOutlet weak var content: UILabel?
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var phoneLabel: UILabel!
-    @IBOutlet var urlLabel: UILabel!
+    @IBOutlet var urlLabel: UIButton!
+    
+    var urlString: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,16 @@ class CafeInfoViewController: UIViewController {
             content?.text = infoItem.name
             addressLabel?.text = infoItem.address
             phoneLabel?.text = infoItem.phone
-            urlLabel?.text = infoItem.url
+            urlLabel?.setTitle(infoItem.url, for: .normal)
+            
+            urlString = infoItem.url
+        }
+    }
+    
+    @IBAction func openURL() {
+        print("url : " + urlString)
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url, options: [:])
         }
     }
     
