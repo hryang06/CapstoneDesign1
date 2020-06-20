@@ -9,10 +9,18 @@
 import UIKit
 import Firebase
 
+/* protocol definition
+protocol TableViewControllerDelegate: class {
+    @available(iOS 13.0, *)
+    func tableViewController (_ controller: TableViewController, didFinishAdding item: Cafe)
+} */
+
 @available(iOS 13.0, *)
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, ViewControllerDelegate {
     var ref: DatabaseReference!
     var cafelist = CafeList()
+    //var cafelist: CafeList!
+    var delegateChecked: Bool!
     //var dummyCafeList = [Cafe]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +31,7 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        /*
         for idx in Range(0...14) {
             let root = "data/" + String(idx)
             ref = Database.database().reference()
@@ -41,21 +50,23 @@ class TableViewController: UITableViewController {
                 print(self.cafelist.dummyCafeList.count)
             })
         }
+        */
         //{ (error) in
         //    print(error.localizedDescription)
         //}
-        
+        self.delegateChecked = true
         print("viewDidLoad")
-        print(self.cafelist.dummyCafeList.count)
+        //print(self.cafelist.dummyCafeList.count)
         //self.loadView()
         //Cafe.loadCafe()
     }
     
+    /*
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         tableView.reloadData()
-    }
+    }*/
 
     // MARK: - Table view data source
 
@@ -65,23 +76,48 @@ class TableViewController: UITableViewController {
         return 0
     }
  */
+    func viewController(_ controller: ViewController, didFinishAdding item: CafeList) {
+        self.cafelist = item
+        //cafelist.dummyCafeList.append(item.dummyCafeList[0])
+        print("delegate view controller : " + String(cafelist.dummyCafeList.count))
+        self.delegateChecked = true
+        //tableView.reloadData()
+    }
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ForPrice" {
+            let controller = segue.destination as! ViewController
+            controller.delegate = self
+        }
+    }*/
     
     @IBAction func sortByPrice() {
-        print("sortByPrice")
-        cafelist.dummyCafeList = cafelist.dummyCafeList.sorted(by: {$0.price < $1.price})
-        tableView.reloadData()
+        if cafelist != nil {
+            print("sortByPrice after delegate : " + String(self.cafelist.dummyCafeList.count))
+            cafelist.dummyCafeList = cafelist.dummyCafeList.sorted(by: {$0.price < $1.price})
+            tableView.reloadData()
+        }
+        else {
+            print("sortByPrice delegate FALSE")
+        }
     }
     
     @IBAction func sortByRadius() {
-        print("sortByRadius")
-        cafelist.dummyCafeList = cafelist.dummyCafeList.sorted(by: {$0.radius < $1.radius})
-        tableView.reloadData()
+        if cafelist != nil {
+            print("sortByRadius after delegate")
+            cafelist.dummyCafeList = cafelist.dummyCafeList.sorted(by: {$0.radius < $1.radius})
+            tableView.reloadData()
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        //return 30
-        return self.cafelist.dummyCafeList.count
+        if cafelist != nil {
+            return self.cafelist.dummyCafeList.count
+        }
+        else {
+            return 0
+        }
     }
 
     // 가장 중요한 메소드.

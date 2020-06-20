@@ -10,8 +10,21 @@ import UIKit
 import CoreLocation
 import Firebase
 
+/* protocol definition */
+protocol ViewControllerDelegate: class {
+    //@available(iOS 13.0, *)
+    //func viewControllerDidCancel (_ controller: ViewController)
+    @available(iOS 13.0, *)
+    func viewController (_ controller: ViewController, didFinishAdding item: CafeList)
+    //@available(iOS 13.0, *)
+    //func viewController (_ controller: ViewController, didFinishEditing item: CafeList)
+}
+
 @available(iOS 13.0, *)
-class ViewController: UIViewController, MTMapViewDelegate {
+class ViewController: UIViewController, MTMapViewDelegate {//확인:UITextFieldDelegate
+    //weak var delegate: ViewControllerDelegate?
+    var delegate: ViewControllerDelegate?
+    
     var ref: DatabaseReference!
     var cafelist = CafeList()
     //@IBOutlet weak var cafelist: CafeList!
@@ -22,6 +35,8 @@ class ViewController: UIViewController, MTMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.delegate = TableViewController()
         
         /* load data */
         for idx in Range(0...14) {
@@ -77,6 +92,11 @@ class ViewController: UIViewController, MTMapViewDelegate {
         }
         mapView?.addPOIItems(cafeList)
         mapView?.fitAreaToShowAllPOIItems()
+        
+        // delegate
+        print("before send delegate")
+        delegate?.viewController(self, didFinishAdding: cafelist)
+        print("after send delegate")
         
         // dummyCafeList 데이터 갱신
         

@@ -19,6 +19,18 @@ class CafeInfoViewController: UIViewController {
         
     }
     
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PushInfo" {
+            let controller = segue.destination as! TableViewController
+            controller.delegate = self
+            /*
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
+                controller.itemToEdit = items[indexPath.row]
+            }*/
+        }
+    }*/
+    
 
     /*
     // MARK: - Navigation

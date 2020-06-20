@@ -73,6 +73,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="3Xm-4O-Lvs"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vkx-Kw-Gev"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkQ-62-kjm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +112,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Aap-hq-kCs" kind="show" id="TgJ-tc-MCh"/>
+                                    <segue destination="Aap-hq-kCs" kind="show" identifier="PushInfo" id="Bsa-8e-5vl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
