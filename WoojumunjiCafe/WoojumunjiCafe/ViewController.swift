@@ -34,9 +34,12 @@ class ViewController: UIViewController, MTMapViewDelegate {
                 let longitude = value?["x"] as? String ?? ""
                 let radius = value?["distance"] as? String ?? ""
                 let price = value?["price"] as? Int ?? 0
+                let address = value?["address_name"] as? String ?? ""
+                let url = value?["place_url"] as? String ?? ""
+                let phone = value?["phone"] as? String ?? ""
                 
                 //print(cafename)
-                let cafe = Cafe(name: cafename, latitude: latitude, longitude: longitude, radius: radius, price: price)
+                let cafe = Cafe(name: cafename, latitude: latitude, longitude: longitude, radius: radius, price: price, address: address, url: url, phone: phone)
                 print(cafe.name)
                 self.cafelist.dummyCafeList.append(cafe)
                 print(self.cafelist.dummyCafeList.count)

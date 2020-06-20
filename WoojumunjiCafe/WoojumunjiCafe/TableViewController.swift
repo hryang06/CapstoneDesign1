@@ -9,8 +9,17 @@
 import UIKit
 import Firebase
 
+/*
+protocol TableViewControllerDelegate: class {
+    @available(iOS 13.0, *)
+    func tableViewController(_ controller: TableViewController, didFinishAdding item: Cafe)
+}
+ */
+
 @available(iOS 13.0, *)
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, CafeInfoViewControllerDelegate {
+    //weak var delegate: TableViewControllerDelegate?
+    
     var ref: DatabaseReference!
     var cafelist = CafeList()
     //var dummyCafeList = [Cafe]()
@@ -33,9 +42,12 @@ class TableViewController: UITableViewController {
                 let longitude = value?["x"] as? String ?? ""
                 let radius = value?["distance"] as? String ?? ""
                 let price = value?["price"] as? Int ?? 0
+                let address = value?["address_name"] as? String ?? ""
+                let url = value?["place_url"] as? String ?? ""
+                let phone = value?["phone"] as? String ?? ""
                 
                 //print(cafename)
-                let cafe = Cafe(name: cafename, latitude: latitude, longitude: longitude, radius: radius, price: price)
+                let cafe = Cafe(name: cafename, latitude: latitude, longitude: longitude, radius: radius, price: price, address: address, url: url, phone: phone)
                 print(cafe.name)
                 self.cafelist.dummyCafeList.append(cafe)
                 print(self.cafelist.dummyCafeList.count)
@@ -106,6 +118,22 @@ class TableViewController: UITableViewController {
                             didSelectRowAt indexPath: IndexPath) {
         let item = self.cafelist.dummyCafeList[indexPath.row]
         item.toggleChecked()
+    }
+    
+    func cafeInfoViewController(_ controller: CafeInfoViewController, didFinishAdding item: Cafe) {
+        print("cafeInfoViewController didFinishAdding")
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CafeInfo" {
+            let controller = segue.destination as! CafeInfoViewController
+            controller.delegate = self
+            
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
+                controller.infoItem = cafelist.dummyCafeList[indexPath.row]
+            }
+        }
     }
     
 

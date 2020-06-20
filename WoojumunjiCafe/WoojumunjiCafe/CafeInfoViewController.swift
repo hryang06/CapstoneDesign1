@@ -8,15 +8,32 @@
 
 import UIKit
 
-class CafeInfoViewController: UIViewController {
-    @IBOutlet weak var content: UILabel?
+protocol CafeInfoViewControllerDelegate: class {
+    @available(iOS 13.0, *)
+    func cafeInfoViewController(_ controller: CafeInfoViewController, didFinishAdding item: Cafe)
+}
 
+class CafeInfoViewController: UIViewController {
+    weak var delegate: CafeInfoViewControllerDelegate?
+    var infoItem: Cafe?
+    
+    @IBOutlet weak var content: UILabel?
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var phoneLabel: UILabel!
+    @IBOutlet var urlLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        
+        if let infoItem = infoItem {
+            //title = "Edit Item"
+            content?.text = infoItem.name
+            addressLabel?.text = infoItem.address
+            phoneLabel?.text = infoItem.phone
+            urlLabel?.text = infoItem.url
+        }
     }
     
 
