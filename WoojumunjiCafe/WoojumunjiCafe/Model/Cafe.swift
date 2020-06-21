@@ -31,6 +31,10 @@ class Cafe : NSObject {
         self.url = url
         self.phone = phone
         self.checked = false
+        
+        if price == 0 {
+            self.price = 10000 // price의 max 설정
+        }
     }
     
     var dummyCafeList = [Cafe]()

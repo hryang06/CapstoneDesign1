@@ -59,8 +59,6 @@ class TableViewController: UITableViewController, CafeInfoViewControllerDelegate
         
         print("viewDidLoad")
         print(self.cafelist.dummyCafeList.count)
-        //self.loadView()
-        //Cafe.loadCafe()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,13 +69,6 @@ class TableViewController: UITableViewController, CafeInfoViewControllerDelegate
 
     // MARK: - Table view data source
 
-    /*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
- */
-    
     @IBAction func sortByPrice() {
         print("sortByPrice")
         cafelist.dummyCafeList = cafelist.dummyCafeList.sorted(by: {$0.price < $1.price})
@@ -92,7 +83,6 @@ class TableViewController: UITableViewController, CafeInfoViewControllerDelegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        //return 30
         return self.cafelist.dummyCafeList.count
     }
 

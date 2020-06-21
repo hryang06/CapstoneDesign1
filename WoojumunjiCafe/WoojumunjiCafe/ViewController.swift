@@ -16,11 +16,9 @@ import Firebase
 class ViewController: UIViewController, MTMapViewDelegate {
     var ref: DatabaseReference!
     var cafelist = CafeList()
-    //@IBOutlet weak var cafelist: CafeList!
     var mapView: MTMapView?
     var mapPoint: MTMapPoint?
     var locationMarkerItem: MTMapLocationMarkerItem?
-    //var cafes: Cafe?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +53,6 @@ class ViewController: UIViewController, MTMapViewDelegate {
         // set center point to 서강대학교
         mapPoint = MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: 37.550950, longitude: 126.941017))
         mapView?.setMapCenter(mapPoint, animated: true)
-        
-        // set center point to current location
-        // mapView?.currentLocationTrackingMode = .onWithoutHeading
 
         if let mapView = mapView {
             mapView.delegate = self
@@ -82,11 +77,6 @@ class ViewController: UIViewController, MTMapViewDelegate {
         }
         mapView?.addPOIItems(cafeList)
         mapView?.fitAreaToShowAllPOIItems()
-        
-        // dummyCafeList 데이터 갱신
-        
-        //print("onClick")
-        //print(self.cafelist.dummyCafeList.count)
     }
     
     @IBAction func onCurrentLocationClick(_ sender: Any) {
@@ -96,8 +86,6 @@ class ViewController: UIViewController, MTMapViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         // 여기서 map view가 고쳐질 때마다 새로 화면 load
-        //mapView?.addPOIItems(cafes)
-        //mapView?.fitAreaToShowAllPOIItems()
     }
      
     
